@@ -11,6 +11,7 @@ const TotalCountry = require("./Functions/TotalCountry");
 const TotalTrainingProvider = require("./Functions/TotalTrainingProvider");
 const AddRecord = require("./Functions/AddRecord");
 
+router.get("/", (req, res) => res.send("welcome"));
 router.get("/statusWiseCount", HeaderValidation, StatusWiseCount);
 router.get("/trainingProvider", HeaderValidation, TrainingProvider);
 router.get(
