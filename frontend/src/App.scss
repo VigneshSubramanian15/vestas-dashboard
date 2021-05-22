@@ -1,0 +1,119 @@
+.App {
+  text-align: center;
+}
+
+.charts {
+  // overflow: hidden;
+  padding: 20px;
+
+  h1 {
+    margin: 24px 0;
+  }
+}
+.count {
+  font-size: 50px;
+  font-weight: 700;
+}
+.heading {
+  position: relative;
+  .cancle {
+    font-size: 15px;
+    float: right;
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+  }
+  .spcl-button {
+    position: absolute;
+    top: 0;
+    right: 30px;
+    border: none;
+    padding: 10px 25px;
+    background: #d07100;
+    border-radius: 6px;
+    font-weight: 600;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      background: #d07200d2;
+    }
+  }
+  .create-course-div {
+    .create-course {
+      justify-content: center;
+    }
+  }
+}
+.form-style {
+  button {
+    top: 0;
+    right: 30px;
+    border: none;
+    padding: 10px 25px;
+    background: #d07100;
+    border-radius: 6px;
+    font-weight: 600;
+    margin: 5px !important;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      background: #d07200d2;
+    }
+  }
+
+  label {
+    display: block;
+    float: left;
+  }
+  .option {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+    margin: 0 3px;
+  }
+}
+.Card-Component {
+  .card {
+    border-radius: 20px;
+  }
+  .arrows {
+    text-align: right;
+    span {
+      margin: 0 10px;
+      img {
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+      }
+      &:hover img {
+        transform: scale(1.5);
+      }
+    }
+  }
+  .color {
+    &:nth-child(1) {
+      .card {
+        background-color: antiquewhite;
+      }
+    }
+    &:nth-child(2) {
+      .card {
+        background-color: cornflowerblue;
+      }
+    }
+    &:nth-child(3) {
+      .card {
+        background-color: aqua;
+      }
+    }
+    &:nth-child(4) {
+      .card {
+        background-color: #b271ef9e;
+      }
+    }
+    &:nth-child(5) {
+      .card {
+        background-color: burlywood;
+      }
+    }
+  }
+}
