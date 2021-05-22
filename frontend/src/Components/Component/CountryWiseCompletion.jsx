@@ -7,7 +7,9 @@ import { Card, CardBody } from "shards-react";
 export default function CountryWiseCompletion({ countryData, setcountryData }) {
   useEffect(() => {
     axios
-      .get(process.env.REACT_APP_API_URL + "countryCompletion")
+      .get(process.env.REACT_APP_API_URL + "countryCompletion", {
+        headers: { Authorization: process.env.REACT_APP_HEADER_TOKEN },
+      })
       .then(({ data: { data } }) => setcountryData(data));
   }, []);
   return (

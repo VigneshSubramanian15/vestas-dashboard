@@ -22,20 +22,26 @@ export default function CardsComponent() {
   useEffect(() => {
     setYearCount(0);
     axios
-      .get(process.env.REACT_APP_API_URL + "yearlyCompletion/" + year)
+      .get(process.env.REACT_APP_API_URL + "yearlyCompletion/" + year, {
+        headers: { Authorization: process.env.REACT_APP_HEADER_TOKEN },
+      })
       .then(({ data }) => setYearCount(data.count));
   }, [year]);
 
   useEffect(() => {
     setyearExpireCount(0);
     axios
-      .get(process.env.REACT_APP_API_URL + "yearlyExpire/" + yearExpire)
+      .get(process.env.REACT_APP_API_URL + "yearlyExpire/" + yearExpire, {
+        headers: { Authorization: process.env.REACT_APP_HEADER_TOKEN },
+      })
       .then(({ data }) => setyearExpireCount(data.count));
   }, [yearExpire]);
 
   const GetTotalCoursesAvailable = () => {
     axios
-      .get(process.env.REACT_APP_API_URL + "totalCourses/")
+      .get(process.env.REACT_APP_API_URL + "totalCourses/", {
+        headers: { Authorization: process.env.REACT_APP_HEADER_TOKEN },
+      })
       .then(({ data }) => {
         setTotalCourses(data.totalCourses);
       });
@@ -43,7 +49,9 @@ export default function CardsComponent() {
 
   const GetTotalCountryAvailable = () => {
     axios
-      .get(process.env.REACT_APP_API_URL + "totalCountry/")
+      .get(process.env.REACT_APP_API_URL + "totalCountry/", {
+        headers: { Authorization: process.env.REACT_APP_HEADER_TOKEN },
+      })
       .then(({ data }) => {
         settoTalCountry(data.totalCountry);
       });
@@ -51,7 +59,9 @@ export default function CardsComponent() {
 
   const GetTotalTrainingProvider = () => {
     axios
-      .get(process.env.REACT_APP_API_URL + "totalTrainingProvider/")
+      .get(process.env.REACT_APP_API_URL + "totalTrainingProvider/", {
+        headers: { Authorization: process.env.REACT_APP_HEADER_TOKEN },
+      })
       .then(({ data }) => {
         settotalTrainingProvider(data.totalTrainingProvider);
       });

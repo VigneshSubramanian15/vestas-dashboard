@@ -6,7 +6,9 @@ import LineChart from "../Chart/LineChart";
 export default function StatusWiseCount({ statusCount, setstatusCount }) {
   useEffect(() => {
     axios
-      .get(process.env.REACT_APP_API_URL + "statusWiseCount")
+      .get(process.env.REACT_APP_API_URL + "statusWiseCount", {
+        headers: { Authorization: process.env.REACT_APP_HEADER_TOKEN },
+      })
       .then(({ data: { data } }) => setstatusCount(data));
   }, []);
   return (

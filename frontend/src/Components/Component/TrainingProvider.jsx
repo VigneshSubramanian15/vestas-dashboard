@@ -9,7 +9,9 @@ export default function TrainingProvider({
 }) {
   useEffect(() => {
     axios
-      .get(process.env.REACT_APP_API_URL + "trainingProvider")
+      .get(process.env.REACT_APP_API_URL + "trainingProvider", {
+        headers: { Authorization: process.env.REACT_APP_HEADER_TOKEN },
+      })
       .then(({ data: { data } }) => settrainingProvider(data));
   }, []);
   return (

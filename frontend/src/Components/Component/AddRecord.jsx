@@ -78,10 +78,14 @@ export default function AddRecord() {
       },
     });
     axios
-      .post(process.env.REACT_APP_API_URL + "addRecord", {
-        ...formData,
-        records,
-      })
+      .post(
+        process.env.REACT_APP_API_URL + "addRecord",
+        {
+          ...formData,
+          records,
+        },
+        { headers: { Authorization: process.env.REACT_APP_HEADER_TOKEN } }
+      )
       .then((res) => {
         Swal.fire({
           title: "Course SuccessFully Created",

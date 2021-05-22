@@ -5,7 +5,9 @@ import LineChart from "../Chart/LineChart";
 export default function CourseWiseCompletion({ courseData, setcourseData }) {
   useEffect(() => {
     axios
-      .get(process.env.REACT_APP_API_URL + "courseCompletion")
+      .get(process.env.REACT_APP_API_URL + "courseCompletion", {
+        headers: { Authorization: process.env.REACT_APP_HEADER_TOKEN },
+      })
       .then(({ data: { data } }) => setcourseData(data));
   }, []);
   return (
